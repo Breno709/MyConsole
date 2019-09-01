@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>169e1636-3a74-4617-9076-b44328717a87</ProjectGuid>
+    <ProjectGuid>{169E1636-3A74-4617-9076-B44328717A87}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyConsole</RootNamespace>
+    <RootNamespace>ExtConsole</RootNamespace>
     <AssemblyName>MyConsole</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -31,24 +31,189 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Colorful.Console, Version=1.2.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Colorful.Console.1.2.9\lib\net461\Colorful.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="FgltFonts.cs" />
+    <Compile Include="FigletFonts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FigletFonts.resx</DependentUpon>
+    </Compile>
+    <Compile Include="FigletFontSolver.cs" />
+    <Compile Include="MyConsole_Draw.cs" />
+    <Compile Include="MyConsole_Util .cs" />
+    <Compile Include="MyConsole_Write .cs" />
+    <Compile Include="MyConsole_Read.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\3-d.flf" />
+    <None Include="Resources\3x5.flf" />
+    <None Include="Resources\5lineoblique.flf" />
+    <None Include="Resources\acrobatic.flf" />
+    <None Include="Resources\alligator.flf" />
+    <None Include="Resources\alligator2.flf" />
+    <None Include="Resources\alphabet.flf" />
+    <None Include="Resources\avatar.flf" />
+    <None Include="Resources\banner.flf" />
+    <None Include="Resources\banner3-D.flf" />
+    <None Include="Resources\banner3.flf" />
+    <None Include="Resources\banner4.flf" />
+    <None Include="Resources\barbwire.flf" />
+    <None Include="Resources\basic.flf" />
+    <None Include="Resources\bell.flf" />
+    <None Include="Resources\big.flf" />
+    <None Include="Resources\bigchief.flf" />
+    <None Include="Resources\binary.flf" />
+    <None Include="Resources\block.flf" />
+    <None Include="Resources\bubble.flf" />
+    <None Include="Resources\bulbhead.flf" />
+    <None Include="Resources\calgphy2.flf" />
+    <None Include="Resources\caligraphy.flf" />
+    <None Include="Resources\catwalk.flf" />
+    <None Include="Resources\chunky.flf" />
+    <None Include="Resources\coinstak.flf" />
+    <None Include="Resources\colossal.flf" />
+    <None Include="Resources\computer.flf" />
+    <None Include="Resources\contessa.flf" />
+    <None Include="Resources\contrast.flf" />
+    <None Include="Resources\cosmic.flf" />
+    <None Include="Resources\cosmike.flf" />
+    <None Include="Resources\cricket.flf" />
+    <None Include="Resources\cursive.flf" />
+    <None Include="Resources\cyberlarge.flf" />
+    <None Include="Resources\cybermedium.flf" />
+    <None Include="Resources\cybersmall.flf" />
+    <None Include="Resources\diamond.flf" />
+    <None Include="Resources\digital.flf" />
+    <None Include="Resources\doh.flf" />
+    <None Include="Resources\doom.flf" />
+    <None Include="Resources\dotmatrix.flf" />
+    <None Include="Resources\drpepper.flf" />
+    <None Include="Resources\eftichess.flf" />
+    <None Include="Resources\eftifont.flf" />
+    <None Include="Resources\eftipiti.flf" />
+    <None Include="Resources\eftirobot.flf" />
+    <None Include="Resources\eftitalic.flf" />
+    <None Include="Resources\eftiwall.flf" />
+    <None Include="Resources\eftiwater.flf" />
+    <None Include="Resources\epic.flf" />
+    <None Include="Resources\fender.flf" />
+    <None Include="Resources\fourtops.flf" />
+    <None Include="Resources\fuzzy.flf" />
+    <None Include="Resources\goofy.flf" />
+    <None Include="Resources\gothic.flf" />
+    <None Include="Resources\graffiti.flf" />
+    <None Include="Resources\hollywood.flf" />
+    <None Include="Resources\invita.flf" />
+    <None Include="Resources\isometric1.flf" />
+    <None Include="Resources\isometric2.flf" />
+    <None Include="Resources\isometric3.flf" />
+    <None Include="Resources\isometric4.flf" />
+    <None Include="Resources\italic.flf" />
+    <None Include="Resources\ivrit.flf" />
+    <None Include="Resources\jazmine.flf" />
+    <None Include="Resources\jerusalem.flf" />
+    <None Include="Resources\katakana.flf" />
+    <None Include="Resources\kban.flf" />
+    <None Include="Resources\larry3d.flf" />
+    <None Include="Resources\lcd.flf" />
+    <None Include="Resources\lean.flf" />
+    <None Include="Resources\letters.flf" />
+    <None Include="Resources\linux.flf" />
+    <None Include="Resources\lockergnome.flf" />
+    <None Include="Resources\madrid.flf" />
+    <None Include="Resources\marquee.flf" />
+    <None Include="Resources\maxfour.flf" />
+    <None Include="Resources\mike.flf" />
+    <None Include="Resources\mini.flf" />
+    <None Include="Resources\mirror.flf" />
+    <None Include="Resources\mnemonic.flf" />
+    <None Include="Resources\morse.flf" />
+    <None Include="Resources\moscow.flf" />
+    <None Include="Resources\nancyj-fancy.flf" />
+    <None Include="Resources\nancyj-underlined.flf" />
+    <None Include="Resources\nancyj.flf" />
+    <None Include="Resources\nipples.flf" />
+    <None Include="Resources\ntgreek.flf" />
+    <None Include="Resources\o8.flf" />
+    <None Include="Resources\ogre.flf" />
+    <None Include="Resources\pawp.flf" />
+    <None Include="Resources\peaks.flf" />
+    <None Include="Resources\pebbles.flf" />
+    <None Include="Resources\pepper.flf" />
+    <None Include="Resources\poison.flf" />
+    <None Include="Resources\puffy.flf" />
+    <None Include="Resources\pyramid.flf" />
+    <None Include="Resources\rectangles.flf" />
+    <None Include="Resources\relief.flf" />
+    <None Include="Resources\relief2.flf" />
+    <None Include="Resources\rev.flf" />
+    <None Include="Resources\roman.flf" />
+    <None Include="Resources\rot13.flf" />
+    <None Include="Resources\rounded.flf" />
+    <None Include="Resources\rowancap.flf" />
+    <None Include="Resources\rozzo.flf" />
+    <None Include="Resources\runic.flf" />
+    <None Include="Resources\runyc.flf" />
+    <None Include="Resources\sblood.flf" />
+    <None Include="Resources\script.flf" />
+    <None Include="Resources\serifcap.flf" />
+    <None Include="Resources\shadow.flf" />
+    <None Include="Resources\short.flf" />
+    <None Include="Resources\slant.flf" />
+    <None Include="Resources\slide.flf" />
+    <None Include="Resources\slscript.flf" />
+    <None Include="Resources\small.flf" />
+    <None Include="Resources\smisome1.flf" />
+    <None Include="Resources\smkeyboard.flf" />
+    <None Include="Resources\smscript.flf" />
+    <None Include="Resources\smshadow.flf" />
+    <None Include="Resources\smslant.flf" />
+    <None Include="Resources\smtengwar.flf" />
+    <None Include="Resources\speed.flf" />
+    <None Include="Resources\stampatello.flf" />
+    <None Include="Resources\standard.flf" />
+    <None Include="Resources\starwars.flf" />
+    <None Include="Resources\stellar.flf" />
+    <None Include="Resources\stop.flf" />
+    <None Include="Resources\straight.flf" />
+    <None Include="Resources\tanja.flf" />
+    <None Include="Resources\tengwar.flf" />
+    <None Include="Resources\term.flf" />
+    <None Include="Resources\thick.flf" />
+    <None Include="Resources\thin.flf" />
+    <None Include="Resources\threepoint.flf" />
+    <None Include="Resources\ticks.flf" />
+    <None Include="Resources\ticksslant.flf" />
+    <None Include="Resources\tinker-toy.flf" />
+    <None Include="Resources\tombstone.flf" />
+    <None Include="Resources\trek.flf" />
+    <None Include="Resources\tsalagi.flf" />
+    <None Include="Resources\twopoint.flf" />
+    <None Include="Resources\univers.flf" />
+    <None Include="Resources\usaflag.flf" />
+    <None Include="Resources\wavy.flf" />
+    <None Include="Resources\weird.flf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FigletFonts.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FigletFonts.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>
